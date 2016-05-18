@@ -23,7 +23,5 @@ docker build --tag "$nameImage" --quiet  .
 docker rm --force $nameContainer
 docker create --name $nameContainer "$nameImage"
 
-#Start container for development
-docker start --attach $nameContainer
-
+#Exit
 exit 0
