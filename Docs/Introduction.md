@@ -9,6 +9,8 @@
 
 ------------------------------------------------------------------------
 
+## Descripció
+
 Aquest es el treball elaborat com a projecte de final de curs de ASIX.
 El tema general d'aquest any es __tecnologies actuals per la gestió de logs__.
 I el tema concret escollit per aquest projecte es __Centralització de logs JSON en BBDD i post-processat__.
@@ -29,6 +31,7 @@ __Serveis utilitzats:__
 > - [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html)
 
 ------------------------------------------------------------------------
+
 ## ELK
 
 La utilització d'aquets serveis per processar les dades s'està fent cada cop més popular, 

@@ -4,12 +4,12 @@
 #11/05/2016
 
 
-#Al executar aquest script es creara el contenidor docker de logstash
+# Al executar aquest script es creara el contenidor docker de logstash
 
-#Instruccions i requisits
-#	Executar en el directori on está el dockerfile
-#	Tenir instalada una versió actual i funcional de docker
-#	Disposar de connexió a internet
+# Instruccions i requisits
+#	- Executar en el directori on está el dockerfile
+#	- Tenir instalada una versió actual i funcional de docker
+#	- Disposar de connexió a internet
  
 ########################################################################
 
@@ -17,11 +17,17 @@ nameImage='image-logstash'
 nameContainer="cont-logstash"
 
 #Create docker image
-docker build --tag "$nameImage" --quiet  . 
+docker build \
+	--tag "$nameImage" \
+	--quiet  . 
+
+#Delete old container
+docker rm --force $nameContainer
 
 #Create container
-docker rm --force $nameContainer
-docker create --link=cont-elastic:hostElast --name $nameContainer "$nameImage"
+docker create \
+	--link=cont-elastic:hostElast \
+	--name $nameContainer "$nameImage"
 
 #Exit
 exit 0

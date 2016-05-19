@@ -20,9 +20,6 @@ docker start $nameContElast
 docker start $nameContLog 
 docker start $nameContKiba
 
-#
-docker exec $nameContLog logstash -f /etc/logstash/conf.d/first-pipeline.conf
-
 #Comrpovar
 docker ps
 
