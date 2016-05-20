@@ -15,7 +15,7 @@
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 #Create repository
-tee //etc/yum.repos.d/elasticsearch.repo <<-'EOF'
+tee /etc/yum.repos.d/elasticsearch.repo <<-'EOF'
 [elasticsearch-2.x]
 name=Elasticsearch repository for 2.x packages
 baseurl=https://packages.elastic.co/elasticsearch/2.x/centos
@@ -29,6 +29,9 @@ yum -y install elasticsearch
 
 #Start elasticsearch service
 systemctl start elasticsearch
+
+#Install plugin head
+/usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head
 
 #Exit
 exit 0
