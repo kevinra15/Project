@@ -1,0 +1,154 @@
+[
+{
+    "Id": "0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196",
+    "Created": "2016-05-19T10:49:14.419525174Z",
+    "Path": "/docker-entrypoint.sh",
+    "Args": [
+        "logstash",
+        "agent",
+        "-f",
+        "/etc/logstash/conf.d/first-pipeline.conf"
+    ],
+    "State": {
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 3732,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2016-05-20T08:41:18.533664863Z",
+        "FinishedAt": "2016-05-20T08:41:15.798324103Z"
+    },
+    "Image": "30c3e83fe85e9569d2cfb886078be131999ce56766941bb11027ffe1cda8c5dd",
+    "NetworkSettings": {
+        "Bridge": "",
+        "EndpointID": "eb242862ab21c389cef19fcf91c6be9475fc0d4e32144523bf432c3b74d5e5e3",
+        "Gateway": "172.17.42.1",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "HairpinMode": false,
+        "IPAddress": "172.17.0.5",
+        "IPPrefixLen": 16,
+        "IPv6Gateway": "",
+        "LinkLocalIPv6Address": "",
+        "LinkLocalIPv6PrefixLen": 0,
+        "MacAddress": "02:42:ac:11:00:05",
+        "NetworkID": "e3d36a195c9359147efd8e936be29c0829b0ae7b679499e889d7508d69bd1d62",
+        "PortMapping": null,
+        "Ports": {},
+        "SandboxKey": "/var/run/docker/netns/0f0ed4ef519d",
+        "SecondaryIPAddresses": null,
+        "SecondaryIPv6Addresses": null
+    },
+    "ResolvConfPath": "/var/lib/docker/containers/0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196/hostname",
+    "HostsPath": "/var/lib/docker/containers/0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196/hosts",
+    "LogPath": "/var/lib/docker/containers/0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196/0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196-json.log",
+    "Name": "/cont-logstash",
+    "RestartCount": 0,
+    "Driver": "devicemapper",
+    "ExecDriver": "native-0.2",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": [
+        "46121cb9e3c19ca438c31b78bae579f07339682f1211b6f4c84aeeb183c79108"
+    ],
+    "HostConfig": {
+        "Binds": null,
+        "ContainerIDFile": "",
+        "LxcConf": [],
+        "Memory": 0,
+        "MemorySwap": 0,
+        "CpuShares": 0,
+        "CpuPeriod": 0,
+        "CpusetCpus": "",
+        "CpusetMems": "",
+        "CpuQuota": 0,
+        "BlkioWeight": 0,
+        "OomKillDisable": false,
+        "MemorySwappiness": -1,
+        "Privileged": false,
+        "PortBindings": {},
+        "Links": [
+            "/cont-elastic:/cont-logstash/hostElast"
+        ],
+        "PublishAllPorts": false,
+        "Dns": null,
+        "DnsSearch": null,
+        "ExtraHosts": null,
+        "VolumesFrom": null,
+        "Devices": [],
+        "NetworkMode": "default",
+        "IpcMode": "",
+        "PidMode": "",
+        "UTSMode": "",
+        "CapAdd": null,
+        "CapDrop": null,
+        "GroupAdd": null,
+        "RestartPolicy": {
+            "Name": "no",
+            "MaximumRetryCount": 0
+        },
+        "SecurityOpt": null,
+        "ReadonlyRootfs": false,
+        "Ulimits": null,
+        "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+        },
+        "CgroupParent": "",
+        "ConsoleSize": [
+            0,
+            0
+        ]
+    },
+    "GraphDriver": {
+        "Name": "devicemapper",
+        "Data": {
+            "DeviceId": "390",
+            "DeviceName": "docker-8:5-1721343-0f0ed4ef519d7da4c7bb705f6c916adff8b72ba6948892ced4c3e5d870fdd196",
+            "DeviceSize": "10737418240"
+        }
+    },
+    "Mounts": [],
+    "Config": {
+        "Hostname": "0f0ed4ef519d",
+        "Domainname": "",
+        "User": "",
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "AttachStderr": true,
+        "Tty": false,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Env": [
+            "PATH=/opt/logstash/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "LANG=C.UTF-8",
+            "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre",
+            "JAVA_VERSION=8u72",
+            "JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1",
+            "CA_CERTIFICATES_JAVA_VERSION=20140324",
+            "GOSU_VERSION=1.7",
+            "LOGSTASH_MAJOR=2.3",
+            "LOGSTASH_VERSION=1:2.3.2-1"
+        ],
+        "Cmd": [
+            "logstash",
+            "agent",
+            "-f",
+            "/etc/logstash/conf.d/first-pipeline.conf"
+        ],
+        "Image": "image-logstash",
+        "Volumes": null,
+        "WorkingDir": "",
+        "Entrypoint": [
+            "/docker-entrypoint.sh"
+        ],
+        "OnBuild": null,
+        "Labels": {}
+    }
+}
+]

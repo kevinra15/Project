@@ -1,0 +1,147 @@
+[
+{
+    "Id": "e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687",
+    "Created": "2016-05-19T10:49:06.530369299Z",
+    "Path": "/docker-entrypoint.sh",
+    "Args": [
+        "kibana"
+    ],
+    "State": {
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 3026,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2016-05-20T08:19:42.713337496Z",
+        "FinishedAt": "2016-05-19T11:03:46.263293537Z"
+    },
+    "Image": "54dd5276ab4840443f4abafd9eada9c3a143d9f2511f806564815d451a788bbf",
+    "NetworkSettings": {
+        "Bridge": "",
+        "EndpointID": "0f999d80967bc0f32e25b9144186ff70d7ab08cd198a5e1fc443ac17b7229c66",
+        "Gateway": "172.17.42.1",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "HairpinMode": false,
+        "IPAddress": "172.17.0.3",
+        "IPPrefixLen": 16,
+        "IPv6Gateway": "",
+        "LinkLocalIPv6Address": "",
+        "LinkLocalIPv6PrefixLen": 0,
+        "MacAddress": "02:42:ac:11:00:03",
+        "NetworkID": "e3d36a195c9359147efd8e936be29c0829b0ae7b679499e889d7508d69bd1d62",
+        "PortMapping": null,
+        "Ports": {
+            "5601/tcp": null
+        },
+        "SandboxKey": "/var/run/docker/netns/e318d467d6af",
+        "SecondaryIPAddresses": null,
+        "SecondaryIPv6Addresses": null
+    },
+    "ResolvConfPath": "/var/lib/docker/containers/e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687/hostname",
+    "HostsPath": "/var/lib/docker/containers/e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687/hosts",
+    "LogPath": "/var/lib/docker/containers/e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687/e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687-json.log",
+    "Name": "/cont-kibana",
+    "RestartCount": 0,
+    "Driver": "devicemapper",
+    "ExecDriver": "native-0.2",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": null,
+    "HostConfig": {
+        "Binds": null,
+        "ContainerIDFile": "",
+        "LxcConf": [],
+        "Memory": 0,
+        "MemorySwap": 0,
+        "CpuShares": 0,
+        "CpuPeriod": 0,
+        "CpusetCpus": "",
+        "CpusetMems": "",
+        "CpuQuota": 0,
+        "BlkioWeight": 0,
+        "OomKillDisable": false,
+        "MemorySwappiness": -1,
+        "Privileged": false,
+        "PortBindings": {},
+        "Links": [
+            "/cont-elastic:/cont-kibana/hostElast"
+        ],
+        "PublishAllPorts": false,
+        "Dns": null,
+        "DnsSearch": null,
+        "ExtraHosts": null,
+        "VolumesFrom": null,
+        "Devices": [],
+        "NetworkMode": "default",
+        "IpcMode": "",
+        "PidMode": "",
+        "UTSMode": "",
+        "CapAdd": null,
+        "CapDrop": null,
+        "GroupAdd": null,
+        "RestartPolicy": {
+            "Name": "no",
+            "MaximumRetryCount": 0
+        },
+        "SecurityOpt": null,
+        "ReadonlyRootfs": false,
+        "Ulimits": null,
+        "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+        },
+        "CgroupParent": "",
+        "ConsoleSize": [
+            0,
+            0
+        ]
+    },
+    "GraphDriver": {
+        "Name": "devicemapper",
+        "Data": {
+            "DeviceId": "387",
+            "DeviceName": "docker-8:5-1721343-e318d467d6af47d7c89a563b621152cb097c6b0b0256949cf2509752f677b687",
+            "DeviceSize": "10737418240"
+        }
+    },
+    "Mounts": [],
+    "Config": {
+        "Hostname": "e318d467d6af",
+        "Domainname": "",
+        "User": "",
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "AttachStderr": true,
+        "ExposedPorts": {
+            "5601/tcp": {}
+        },
+        "Tty": false,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Env": [
+            "PATH=/opt/kibana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "GOSU_VERSION=1.7",
+            "TINI_VERSION=v0.9.0",
+            "KIBANA_MAJOR=4.5",
+            "KIBANA_VERSION=4.5.0"
+        ],
+        "Cmd": [
+            "kibana"
+        ],
+        "Image": "image-kibana",
+        "Volumes": null,
+        "WorkingDir": "",
+        "Entrypoint": [
+            "/docker-entrypoint.sh"
+        ],
+        "OnBuild": null,
+        "Labels": {}
+    }
+}
+]

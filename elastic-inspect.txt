@@ -1,0 +1,163 @@
+[
+{
+    "Id": "5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d",
+    "Created": "2016-05-19T10:47:26.796159674Z",
+    "Path": "/docker-entrypoint.sh",
+    "Args": [
+        "elasticsearch"
+    ],
+    "State": {
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 2749,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2016-05-20T08:19:06.416425688Z",
+        "FinishedAt": "2016-05-19T11:03:42.66641647Z"
+    },
+    "Image": "5efe18f5cbf1df3dc03927c3741aef17d038750a63ad628956ca5a096ac51917",
+    "NetworkSettings": {
+        "Bridge": "",
+        "EndpointID": "e7b3f32fa0ab6f686124f1cee6e894b7e426864ab4a82e6c431765d7b62a4ffd",
+        "Gateway": "172.17.42.1",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "HairpinMode": false,
+        "IPAddress": "172.17.0.1",
+        "IPPrefixLen": 16,
+        "IPv6Gateway": "",
+        "LinkLocalIPv6Address": "",
+        "LinkLocalIPv6PrefixLen": 0,
+        "MacAddress": "02:42:ac:11:00:01",
+        "NetworkID": "e3d36a195c9359147efd8e936be29c0829b0ae7b679499e889d7508d69bd1d62",
+        "PortMapping": null,
+        "Ports": {
+            "9200/tcp": null,
+            "9300/tcp": null
+        },
+        "SandboxKey": "/var/run/docker/netns/5ade65537084",
+        "SecondaryIPAddresses": null,
+        "SecondaryIPv6Addresses": null
+    },
+    "ResolvConfPath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/hostname",
+    "HostsPath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/hosts",
+    "LogPath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d-json.log",
+    "Name": "/cont-elastic",
+    "RestartCount": 0,
+    "Driver": "devicemapper",
+    "ExecDriver": "native-0.2",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": null,
+    "HostConfig": {
+        "Binds": null,
+        "ContainerIDFile": "",
+        "LxcConf": [],
+        "Memory": 0,
+        "MemorySwap": 0,
+        "CpuShares": 0,
+        "CpuPeriod": 0,
+        "CpusetCpus": "",
+        "CpusetMems": "",
+        "CpuQuota": 0,
+        "BlkioWeight": 0,
+        "OomKillDisable": false,
+        "MemorySwappiness": -1,
+        "Privileged": false,
+        "PortBindings": {},
+        "Links": null,
+        "PublishAllPorts": false,
+        "Dns": null,
+        "DnsSearch": null,
+        "ExtraHosts": null,
+        "VolumesFrom": null,
+        "Devices": [],
+        "NetworkMode": "default",
+        "IpcMode": "",
+        "PidMode": "",
+        "UTSMode": "",
+        "CapAdd": null,
+        "CapDrop": null,
+        "GroupAdd": null,
+        "RestartPolicy": {
+            "Name": "no",
+            "MaximumRetryCount": 0
+        },
+        "SecurityOpt": null,
+        "ReadonlyRootfs": false,
+        "Ulimits": null,
+        "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+        },
+        "CgroupParent": "",
+        "ConsoleSize": [
+            0,
+            0
+        ]
+    },
+    "GraphDriver": {
+        "Name": "devicemapper",
+        "Data": {
+            "DeviceId": "356",
+            "DeviceName": "docker-8:5-1721343-5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d",
+            "DeviceSize": "10737418240"
+        }
+    },
+    "Mounts": [
+        {
+            "Name": "fcb8cf5c9cea99a1c3b4f741974d6064872acdb714f45d19f18cc2ab9eba6a9d",
+            "Source": "/var/lib/docker/volumes/fcb8cf5c9cea99a1c3b4f741974d6064872acdb714f45d19f18cc2ab9eba6a9d/_data",
+            "Destination": "/usr/share/elasticsearch/data",
+            "Driver": "local",
+            "Mode": "",
+            "RW": true
+        }
+    ],
+    "Config": {
+        "Hostname": "5ade65537084",
+        "Domainname": "",
+        "User": "",
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "AttachStderr": true,
+        "ExposedPorts": {
+            "9200/tcp": {},
+            "9300/tcp": {}
+        },
+        "Tty": false,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Env": [
+            "PATH=/usr/share/elasticsearch/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "LANG=C.UTF-8",
+            "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre",
+            "JAVA_VERSION=8u72",
+            "JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1",
+            "CA_CERTIFICATES_JAVA_VERSION=20140324",
+            "GOSU_VERSION=1.7",
+            "ELASTICSEARCH_MAJOR=2.3",
+            "ELASTICSEARCH_VERSION=2.3.2",
+            "ELASTICSEARCH_REPO_BASE=http://packages.elasticsearch.org/elasticsearch/2.x/debian"
+        ],
+        "Cmd": [
+            "elasticsearch"
+        ],
+        "Image": "image-elastic",
+        "Volumes": {
+            "/usr/share/elasticsearch/data": {}
+        },
+        "WorkingDir": "/usr/share/elasticsearch",
+        "Entrypoint": [
+            "/docker-entrypoint.sh"
+        ],
+        "OnBuild": null,
+        "Labels": {}
+    }
+}
+]

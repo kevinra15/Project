@@ -4,8 +4,10 @@ FROM logstash:2.3
 MAINTAINER Kevin
 
 #Files necesaris per al funcionament del logstash
-COPY apache-logs.log /var/tmp/apache-logs.log
 COPY first-pipeline.conf /etc/logstash/conf.d/first-pipeline.conf
+COPY apache-logs.log /var/log/apache-logs.log
+
+COPY apache-logs.log /var/tmp/apache-suma-logs.log
 
 #Instalació d'un editor de text
 RUN apt-get update

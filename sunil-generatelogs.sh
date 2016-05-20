@@ -1,7 +1,7 @@
 #!/bin/bash
 # 
 
-DELTA='0.9'
+DELTA='5'
 
 
 FACILITIES=(
@@ -53,6 +53,7 @@ do
 			logger --priority $fct.$lvl "$fct.$lvl: $random_message"
 			sleep $DELTA
 		done
+		
 	done
 
 done
