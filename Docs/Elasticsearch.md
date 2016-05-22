@@ -1,7 +1,7 @@
 # Elasticsearch
 [Elasticsearch Official Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
 
-## Definicio
+## Definició
 
 Es un motor de busqueda open source basat en apache. Ens permet enmagatzemar,
 buscar i analitzar grans cantitats de dades a temps casi real.
@@ -72,7 +72,7 @@ documentació oficial indicada a la capçalera del fitxer.
 Una manera mes comode de treballar amb elasticsearch es instalant algún
 plugin que proporcioni una interficie gràfica, com per exemple el "head":
 
-`elasticsearch/bin/plugin -install mobz/elasticsearch-head`
+`elasticsearch/bin/plugin install mobz/elasticsearch-head`
 
 Accedirem a traves de la url: `http://localhost:9200/_plugin/head/`
 

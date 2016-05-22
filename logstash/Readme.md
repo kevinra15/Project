@@ -38,7 +38,7 @@ el servidor elasticsearch, on es guardaran en format JSON.
 
 #### Exemple avançat del config file
 
-[logstash-pipeline.conf](/logstash/conf.d/final-pipeline.conf) 
+[logstash-pipeline.conf](/logstash/localconf.d/final-pipeline.conf) 
 
 
 Aquest ja es un fitxer mes complet:

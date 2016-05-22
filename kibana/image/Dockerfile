@@ -3,7 +3,7 @@ FROM kibana:4.5
 #Mantenidor del dockerfile
 MAINTAINER Kevin
 
-#Files necesaris per al funcionament del kibana
+#Files necesaris per al funcionament del servei kibana
 COPY kibana.yml /opt/kibana/config/kibana.yml
 
 #Instalació d'un editor de text
