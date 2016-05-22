@@ -23,7 +23,7 @@ configuració que definirà la instancia.
 
 ### Exemple bàsic del config file
 
-![](/Docs/images/logstash-basic-configfile.png)
+![](Docs/images/logstash-basic-configfile.png)
 
 
 > - Input: S'indica quina serà l'entrada de logs a procesar, en aquest
@@ -39,6 +39,7 @@ el servidor elasticsearch, on es guardaran en format JSON.
 #### Exemple avançat del config file
 
 [logstash-pipeline.conf](logstash/conf.d/final-pipeline.conf) 
+
 
 Aquest ja es un fitxer mes complet:
 > - Input: Veiem que hi han 3 entrades diferents de logs, per identificarles
