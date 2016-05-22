@@ -1,0 +1,33 @@
+-Crear index anomenat “alumne”:
+
+curl -XPUT 'localhost:9200/alumno?pretty'
+
+-Introduir dades al nostre index:
+
+curl -XPUT 'localhost:9200/customer/external/1?pretty' -d '
+{
+  "name": "Kevin Ramos"
+}'
+
+La part id "1" es opcional, amb aquest metode elastic afegeix un id aleatori:
+
+curl -XPOST 'localhost:9200/customer/external?pretty' -d '
+{
+  "name": "Kevin Ramos"
+}'
+
+-Consultar el nostre index:
+
+curl -XGET 'localhost:9200/customer/external/1?pretty'
+
+-Eliminar un index:
+
+curl -XDELETE 'localhost:9200/customer?pretty'
+
+Modificar index: (es fa a traves de l'id del document, en aquest cas 1)
+
+curl -XPUT 'localhost:9200/customer/external/1?pretty' -d '
+{
+  "name": "Jane Doe"
+}'
+
