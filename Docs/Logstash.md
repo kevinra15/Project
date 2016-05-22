@@ -16,7 +16,7 @@ configuració que definirà la instancia.
 
 ### Exemple bàsic del config file
 
-![](file:/images/logstash-basic-configfile.png)
+![](Docs/images/logstash-basic-configfile.png)
 
 
 > - Input: S'indica quina serà l'entrada de logs a procesar, en aquest
