@@ -1,4 +1,4 @@
-# Creació de contenidor docker kibana
+# Creació d'un contenidor docker kibana
 
 Per crear un contenidor funcional amb el servei kibana tan sols cal 
 executar l'script: `create-cont-kibana.sh`

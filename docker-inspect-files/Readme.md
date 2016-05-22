@@ -1,3 +1,5 @@
+# Directori de suport en cas de fallada d'algun contenidor
+
 > - Aquest es un directori que conté fitxers generats amb docker inspect 
 dels contenidors en correcte funcionament.
 

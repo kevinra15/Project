@@ -1,4 +1,4 @@
-# Creació de contenidor docker logstash
+# Creació d'un contenidor docker logstash
 
 Per crear un contenidor funcional amb el servei logstash tan sols cal 
 executar l'script: `create-cont-logstash.sh`
