@@ -27,7 +27,7 @@ el servidor elasticsearch, on es guardaran en format JSON en la BBDD.
 
 #### Exemple avançat del config file
 
-[logstash-pipeline.conf](Docs/images/final-pipeline.conf) 
+[logstash-pipeline.conf](/Docs/images/final-pipeline.conf) 
 
 Aquest ja es un fitxer mes complet:
 > - Input: Veiem que hi han 3 entrades diferents de logs, per identificarles
