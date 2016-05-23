@@ -27,6 +27,7 @@ docker rm --force $nameContainer
 #Create container
 docker create \
 	--link=cont-elastic:hostElast \
+	--volume /var/log:/var/log/proba \
 	--name $nameContainer "$nameImage"
 
 #Exit
