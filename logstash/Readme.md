@@ -26,26 +26,23 @@ configuració que definirà la instancia.
 ```
 
 input {
-
     file {
         path => "/var/log/messages"
         start_position => "beginning"
         type => "apache"    
-    }
+}
 filter {
-
-		grok {
-			match => { "message" => "%{COMBINEDAPACHELOG}"}
-		}
-		geoip {
-			source => "clientip"
-		}
+	grok {
+		match => { "message" => "%{COMBINEDAPACHELOG}"}
+	}
+	geoip {
+		source => "clientip"
+	}
 }
 output {
-
-        elasticsearch {
-	        hosts => ["localhost:9200"]
-	        index => "logstash-%{+YYYY.MM.dd}"
+    elasticsearch {
+        hosts => ["localhost:9200"]
+        index => "logstash-%{+YYYY.MM.dd}"
 }
 
 ```
