@@ -23,7 +23,32 @@ configuració que definirà la instancia.
 
 ### Exemple bàsic del config file
 
-![](/Docs/images/logstash-basic-configfile.png)
+```
+
+input {
+
+    file {
+        path => "/var/log/messages"
+        start_position => "beginning"
+        type => "apache"    
+    }
+filter {
+
+		grok {
+			match => { "message" => "%{COMBINEDAPACHELOG}"}
+		}
+		geoip {
+			source => "clientip"
+		}
+}
+output {
+
+        elasticsearch {
+	        hosts => ["localhost:9200"]
+	        index => "logstash-%{+YYYY.MM.dd}"
+}
+
+```
 
 
 > - Input: S'indica quina serà l'entrada de logs a procesar, en aquest
