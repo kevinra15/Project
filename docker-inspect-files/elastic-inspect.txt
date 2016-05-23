@@ -1,7 +1,7 @@
 [
 {
-    "Id": "5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d",
-    "Created": "2016-05-19T10:47:26.796159674Z",
+    "Id": "5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4",
+    "Created": "2016-05-23T08:09:35.635975351Z",
     "Path": "/docker-entrypoint.sh",
     "Args": [
         "elasticsearch"
@@ -12,40 +12,40 @@
         "Restarting": false,
         "OOMKilled": false,
         "Dead": false,
-        "Pid": 2749,
+        "Pid": 4494,
         "ExitCode": 0,
         "Error": "",
-        "StartedAt": "2016-05-20T08:19:06.416425688Z",
-        "FinishedAt": "2016-05-19T11:03:42.66641647Z"
+        "StartedAt": "2016-05-23T08:09:57.550576208Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
     },
-    "Image": "5efe18f5cbf1df3dc03927c3741aef17d038750a63ad628956ca5a096ac51917",
+    "Image": "54e5e0e4e374a8a350a416ec954fee1f74b67fda9014905a4aa0449f1695648c",
     "NetworkSettings": {
         "Bridge": "",
-        "EndpointID": "e7b3f32fa0ab6f686124f1cee6e894b7e426864ab4a82e6c431765d7b62a4ffd",
+        "EndpointID": "53279898ccda2550961e082a18692a62fa72bece0ce6237714ab91c200d3822c",
         "Gateway": "172.17.42.1",
         "GlobalIPv6Address": "",
         "GlobalIPv6PrefixLen": 0,
         "HairpinMode": false,
-        "IPAddress": "172.17.0.1",
+        "IPAddress": "172.17.0.2",
         "IPPrefixLen": 16,
         "IPv6Gateway": "",
         "LinkLocalIPv6Address": "",
         "LinkLocalIPv6PrefixLen": 0,
-        "MacAddress": "02:42:ac:11:00:01",
-        "NetworkID": "e3d36a195c9359147efd8e936be29c0829b0ae7b679499e889d7508d69bd1d62",
+        "MacAddress": "02:42:ac:11:00:02",
+        "NetworkID": "bf7bc474dd43955a2cda00ca388bfe661d2ff5dc00c707ba16b8f8a8117c8e9d",
         "PortMapping": null,
         "Ports": {
             "9200/tcp": null,
             "9300/tcp": null
         },
-        "SandboxKey": "/var/run/docker/netns/5ade65537084",
+        "SandboxKey": "/var/run/docker/netns/5c32248d1ea5",
         "SecondaryIPAddresses": null,
         "SecondaryIPv6Addresses": null
     },
-    "ResolvConfPath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/resolv.conf",
-    "HostnamePath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/hostname",
-    "HostsPath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/hosts",
-    "LogPath": "/var/lib/docker/containers/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d/5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d-json.log",
+    "ResolvConfPath": "/var/lib/docker/containers/5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4/hostname",
+    "HostsPath": "/var/lib/docker/containers/5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4/hosts",
+    "LogPath": "/var/lib/docker/containers/5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4/5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4-json.log",
     "Name": "/cont-elastic",
     "RestartCount": 0,
     "Driver": "devicemapper",
@@ -104,15 +104,15 @@
     "GraphDriver": {
         "Name": "devicemapper",
         "Data": {
-            "DeviceId": "356",
-            "DeviceName": "docker-8:5-1721343-5ade6553708400508b16df2df0cee0c2153dcc06561fa08c63977248765d012d",
+            "DeviceId": "476",
+            "DeviceName": "docker-8:5-1721343-5c32248d1ea5a62c7f981882a2153ae54165d88d7b3d7bc34c22c0595aa1e7d4",
             "DeviceSize": "10737418240"
         }
     },
     "Mounts": [
         {
-            "Name": "fcb8cf5c9cea99a1c3b4f741974d6064872acdb714f45d19f18cc2ab9eba6a9d",
-            "Source": "/var/lib/docker/volumes/fcb8cf5c9cea99a1c3b4f741974d6064872acdb714f45d19f18cc2ab9eba6a9d/_data",
+            "Name": "dd00eb02b3023f7737c540a2f44447dee8e0511e5428b7384cc6c64c01d6f53f",
+            "Source": "/var/lib/docker/volumes/dd00eb02b3023f7737c540a2f44447dee8e0511e5428b7384cc6c64c01d6f53f/_data",
             "Destination": "/usr/share/elasticsearch/data",
             "Driver": "local",
             "Mode": "",
@@ -120,7 +120,7 @@
         }
     ],
     "Config": {
-        "Hostname": "5ade65537084",
+        "Hostname": "5c32248d1ea5",
         "Domainname": "",
         "User": "",
         "AttachStdin": false,
