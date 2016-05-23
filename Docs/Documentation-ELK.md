@@ -154,7 +154,7 @@ d'elasticsearch.
 ## Definició
 
 Es un motor de busqueda open source basat en apache. Ens permet enmagatzemar,
-buscar i analitzar grans cantitats de dades a temps casi real.
+i analitzar grans cantitats de dades a temps casi real.
 Elasticsearch funciona en un clúster, en el cual es repliquen les dades
 entre els diferents nodes.
 
@@ -201,7 +201,7 @@ ens permeti fer crides HTTP/REST. Com per exemple curl:
 
 > - Rebre informació bàsica del clúster (nom, número de nodes, status...):
 
-> `curl 'localhost:9200/_cat/health?v' ` 
+> `curl 'localhost:9200/_cat/health?v'` 
 
 > - Informació bàsica dels nodes que composen el cluster:
 
@@ -280,7 +280,7 @@ es a través d'aquets video-turorials oficials:
 ## Exemples de visualitzacions
 
 Kibana ofereix un metode de lo mes sencill pero poder exportar les nostres 
-visualitzacions, i implementarles en una pàgina web per exemple.
+visualitzacions, i implementarles, per exemple, en una pàgina web.
 
 Es tan sencill com crear un dashboard, a la toolbar veurem una icona 
 on posa "shared", i d'allà podrem treure un sencill link, el cual al 

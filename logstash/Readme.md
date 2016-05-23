@@ -67,7 +67,7 @@ Aquest ja es un fitxer mes complet:
 > - Input: Veiem que hi han 3 entrades diferents de logs, per identificarles
 l'hi assignem un `type` a cada una.
 > - Filter: Apliquem els filtres nomes als logs de `type` apache
-> - Output: Segons el `type` creem els index que es guardaràn a la BBDD 
-d'elasticsearch.
+> - Output: Segons el `type` creem els diferents index que es guardaràn 
+a la BBDD d'elasticsearch.
 
 
