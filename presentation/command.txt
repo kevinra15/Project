@@ -1,0 +1,5 @@
+pandoc -t html5 --template=template-revealjs.html \
+    --standalone --section-divs \
+  --variable theme="league" \
+  --variable transition="linear" \
+  presentation.md -o presentation.html

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Projecte final de grau</title>
+
+<meta name="description" content="Projecte final de grau">    
+
+  <meta name="author" content="Kevin Ramos Lopez" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Projecte final de grau</h1>
+<h3>Kevin Ramos Lopez</h3>
+<p>
+<h4>ASX-Curs2 2015/2016</h4>
+</p>
+</section>  
+
+
+<section id="introducció" class="level1">
+<h1>Introducció</h1>
+<section id="centralització-de-logs-json-en-bbdd-i-post-processat" class="level2">
+<h2>Centralització de logs JSON en BBDD i post-processat</h2>
+<p>Serveis utilitzats:</p>
+<blockquote>
+<ul>
+<li>Logstash</li>
+<li>Elasticsearch</li>
+<li>Kibana</li>
+</ul>
+</blockquote>
+</section>
+<section id="elk" class="level2">
+<h2>ELK</h2>
+<figure>
+<img src="images/ELK.png" />
+</figure>
+</section>
+<section id="descripció" class="level2">
+<h2>Descripció</h2>
+<p>La gestió de dades a mesura que creixen es fa mes dura i pesada, es per aixo que l'entorn ELK s'ha fet tant popular, ja que proporciona un metode comode i ràpid per procesar grans cantitats d'informació.</p>
+</section>
+<section id="open-source" class="level2">
+<h2>Open Source</h2>
+<figure>
+<img src="images/opensource.png" />
+</figure>
+</section>
+<section id="plataformes-que-utilitzen-elk" class="level2">
+<h2>Plataformes que utilitzen ELK</h2>
+<blockquote>
+<ul>
+<li>Netflix</li>
+<li>Stack Overflow</li>
+<li>Linkedin</li>
+<li>Fujitsu (Open Stack Cloud)</li>
+</ul>
+</blockquote>
+<p>I moltes mes...</p>
+</section>
+</section>
+<section id="logstash" class="level1">
+<h1>Logstash</h1>
+<section id="section" class="level2">
+<h2></h2>
+<figure>
+<img src="images/logstash.png" />
+</figure>
+</section>
+<section id="descripció-1" class="level2">
+<h2>Descripció</h2>
+<p>Logstash es un motor de recopilació de dades el cual permet unificar diferents entrades de dades i normalitzar aquestes en el destí indicat.</p>
+</section>
+<section id="funcionament" class="level2">
+<h2>Funcionament</h2>
+<p>El funcionament de logstash es basa en un fitxer de configuració.</p>
+<p><code>/etc/logstash/conf.d/name.conf</code></p>
+<p><code>logstash -f /etc/logstash/conf.d/file-name.conf</code></p>
+</section>
+<section id="estructura-fitxer-de-configuració" class="level2">
+<h2>Estructura fitxer de configuració</h2>
+<blockquote>
+<ul>
+<li>Input: S'indica quina serà l'entrada de dades a procesar.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Filter: Defineix els filtres que s'aplicaràn a les dades d'entrada.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Output: Indicarà la sortida d'aquetes dades, podrà ser des d'un servidor elasticsearch fins a un simple fitxer local.</li>
+</ul>
+</blockquote>
+</section>
+<section id="exemple" class="level2">
+<h2>Exemple</h2>
+<pre><code>input {
+    file {
+        path =&gt; &quot;/var/log/apache-logs.log&quot;
+        start_position =&gt; &quot;beginning&quot;
+        type =&gt; &quot;apache&quot;
+    }
+    file {
+        path =&gt; &quot;/var/log/mariadb.log&quot;
+        start_position =&gt; &quot;beginning&quot;
+        type =&gt; &quot;mysql&quot;
+    }
+    file {
+        path =&gt; &quot;/var/log/messages&quot;
+        start_position =&gt; &quot;beginning&quot;
+        type =&gt; &quot;massive&quot;
+    }
+}
+
+filter {
+    if [type] == &quot;apache&quot; {
+        grok {
+            match =&gt; { &quot;message&quot; =&gt; &quot;%{COMBINEDAPACHELOG}&quot;}
+        }
+        geoip {
+            source =&gt; &quot;clientip&quot;
+        }
+    }
+}
+
+output {
+    if [type] == &quot;apache&quot; {
+        elasticsearch {
+            hosts =&gt; [&quot;hostElast:9200&quot;]
+            index =&gt; &quot;logstash-%{+YYYY.MM.dd}&quot;
+        }
+    }
+    if [type] == &quot;massive&quot; {
+        elasticsearch {
+            hosts =&gt; [&quot;hostElast:9200&quot;]
+            index =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
+        }
+    }
+    if [type] == &quot;mysql&quot; {
+        elasticsearch {
+            hosts =&gt; [&quot;hostElast:9200&quot;]
+            index =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
+        }
+    }
+}
+</code></pre>
+</section>
+</section>
+<section id="elasticsearch" class="level1">
+<h1>Elasticsearch</h1>
+<section id="section-1" class="level2">
+<h2></h2>
+<figure>
+<img src="images/es-cluster.png" />
+</figure>
+</section>
+<section id="descripció-2" class="level2">
+<h2>Descripció</h2>
+<p>Es un motor de busqueda basat en apache. Ens permet enmagatzemar, i analitzar grans cantitats de dades a temps casi real. Elasticsearch funciona en un clúster, en el cual es repliquen les dades entre els diferents nodes.</p>
+<p>Utilitza el port 9200.</p>
+</section>
+<section id="conceptes-bàsics" class="level2">
+<h2>Conceptes bàsics</h2>
+<p>Clúster</p>
+<p>Node</p>
+<p>Index</p>
+<p>Document</p>
+<p>Shards i repliques</p>
+</section>
+<section id="posibles-estats-del-clúster" class="level2">
+<h2>Posibles estats del clúster</h2>
+<blockquote>
+<ul>
+<li>Red: Existeixen shards no assignats en el clúster.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Yellow: Tots els shards estàn assignats, pero no hi han replicas d'alguns d'aquets.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Green: Tots els shards estàn assignats i amb les seves respectives repliques.</li>
+</ul>
+</blockquote>
+</section>
+<section id="interacció-amb-elastic" class="level2">
+<h2>Interacció amb elastic</h2>
+<p>Per interactuar amb elasticsearch es pot utilitzar cualsevol eina que ens permeti fer crides HTTP/REST. Com per exemple curl:</p>
+<p><code>curl 'localhost:9200/_cat/health?v'</code></p>
+<p><code>curl 'localhost:9200/_cat/nodes?v</code></p>
+<p><code>curl 'localhost:9200/_cat/indices?v</code></p>
+</section>
+<section id="interficie-gràfica" class="level2">
+<h2>Interficie gràfica</h2>
+<p>Una manera mes comode de treballar amb elasticsearch es instalant algún plugin que proporcioni una interficie gràfica, com per exemple el &quot;head&quot;:</p>
+<p><code>elasticsearch/bin/plugin install mobz/elasticsearch-head</code></p>
+<p>Accedirem a traves de la url: <code>http://localhost:9200/_plugin/head/</code></p>
+</section>
+</section>
+<section id="kibana" class="level1">
+<h1>Kibana</h1>
+<section id="section-2" class="level2">
+<h2></h2>
+<figure>
+<img src="images/kibana.png" />
+</figure>
+</section>
+<section id="descripció-3" class="level2">
+<h2>Descripció</h2>
+<p>Es una plataforma d'ànalisis i visualització de dades. S'utilitza per interactuar amb les dades enmagatzemades d'elasticsearch.</p>
+<p>Pot realitzar facilment anàlisis avançats de dades i visualitzar aquestes a traves de gràfics i mapes.</p>
+<p>El port associat al servei es el 5601</p>
+</section>
+<section id="fitxer-de-configuració" class="level2">
+<h2>Fitxer de configuració</h2>
+<pre><code>
+# Kibana is served by a back end server. This controls which port to use.
+# server.port: 5601
+
+# The host to bind the server to.
+# server.host: &quot;0.0.0.0&quot;
+
+# If you are running kibana behind a proxy, and want to mount it at a path,
+# specify that path here. The basePath can&#39;t end in a slash.
+# server.basePath: &quot;&quot;
+
+# The maximum payload size in bytes on incoming server requests.
+# server.maxPayloadBytes: 1048576
+
+# The Elasticsearch instance to use for all your queries.
+elasticsearch.url: &quot;http://hostElast:9200&quot;
+
+# preserve_elasticsearch_host true will send the hostname specified in `elasticsearch`. If you set it to false,
+# then the host you use to connect to *this* Kibana instance will be sent.
+# elasticsearch.preserveHost: true
+
+# Kibana uses an index in Elasticsearch to store saved searches, visualizations
+# and dashboards. It will create a new index if it doesn&#39;t already exist.
+# kibana.index: &quot;.kibana&quot;
+
+# The default application to load.
+# kibana.defaultAppId: &quot;discover&quot;
+
+# If your Elasticsearch is protected with basic auth, these are the user credentials
+# used by the Kibana server to perform maintenance on the kibana_index at startup. Your Kibana
+# users will still need to authenticate with Elasticsearch (which is proxied through
+# the Kibana server)
+# elasticsearch.username: &quot;user&quot;
+# elasticsearch.password: &quot;pass&quot;
+
+# SSL for outgoing requests from the Kibana Server to the browser (PEM formatted)
+# server.ssl.cert: /path/to/your/server.crt
+# server.ssl.key: /path/to/your/server.key
+
+# Optional setting to validate that your Elasticsearch backend uses the same key files (PEM formatted)
+# elasticsearch.ssl.cert: /path/to/your/client.crt
+# elasticsearch.ssl.key: /path/to/your/client.key
+
+# If you need to provide a CA certificate for your Elasticsearch instance, put
+# the path of the pem file here.
+# elasticsearch.ssl.ca: /path/to/your/CA.pem
+
+# Set to false to have a complete disregard for the validity of the SSL
+# certificate.
+# elasticsearch.ssl.verify: true
+
+# Time in milliseconds to wait for elasticsearch to respond to pings, defaults to
+# request_timeout setting
+# elasticsearch.pingTimeout: 1500
+
+# Time in milliseconds to wait for responses from the back end or elasticsearch.
+# This must be &gt; 0
+# elasticsearch.requestTimeout: 30000
+
+# Time in milliseconds for Elasticsearch to wait for responses from shards.
+# Set to 0 to disable.
+# elasticsearch.shardTimeout: 0
+
+# Time in milliseconds to wait for Elasticsearch at Kibana startup before retrying
+# elasticsearch.startupTimeout: 5000
+
+# Set the path to where you would like the process id file to be created.
+# pid.file: /var/run/kibana.pid
+
+# If you would like to send the log output to a file you can set the path below.
+# logging.dest: stdout
+
+# Set this to true to suppress all logging output.
+# logging.silent: false
+
+# Set this to true to suppress all logging output except for error messages.
+# logging.quiet: false
+
+# Set this to true to log all events, including system usage information and all requests.
+# logging.verbose: false
+</code></pre>
+</section>
+<section id="avantatges" class="level2">
+<h2>Avantatges</h2>
+<ul>
+<li><p>Permet administrar grans volums de dades de manera fàcil i ràpida.</p></li>
+<li><p>Està disenyat per treballar amb elasticsearch</p></li>
+</ul>
+<p>Es tant facil com instalar-ho i ja es podràn visualitzar les dades del servidor elasticsearch indicat.</p>
+</section>
+</section>
+<section id="section-3" class="level1">
+<h1></h1>
+
+<iframe src="http://192.168.2.43:5601/app/kibana#/dashboard/Logs-apache,-London-San-Francisco?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-1d%2Fd,mode:quick,to:now-1d%2Fd))&_a=(filters:!(),options:(darkTheme:!t),panels:!((col:7,id:city-name-logs-location-graffic,panelIndex:1,row:1,size_x:6,size_y:4,type:visualization),(col:1,id:geo-map-apache-logs,panelIndex:2,row:1,size_x:6,size_y:4,type:visualization),(col:1,columns:!(_index,agent,bytes,clientip,geoip.area_code,geoip.city_name,geoip.country_name,httpversion,message),id:'London-SanFrancisco-Gets-apache(9:48)',panelIndex:3,row:5,size_x:8,size_y:4,sort:!(_score,desc),type:search),(col:9,id:table-logs-city-count,panelIndex:4,row:5,size_x:4,size_y:4,type:visualization)),query:(query_string:(analyze_wildcard:!t,query:'*')),title:'Logs%20apache,%20London%20San%20Francisco',uiState:())" height="600" width="800"></iframe>
+
+</section>
+<section id="fin" class="level1">
+<h1>FIN</h1>
+<figure>
+<img src="images/final.png" />
+</figure>
+</section>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'league', 
+  
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+  
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+  });
+
+</script>
+
+</body>
+</html>
