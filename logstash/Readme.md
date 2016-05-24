@@ -8,8 +8,8 @@ indicat.
 
 ## Funcionament
 
-El funcionamnt de logstash es basa en un fitxer de configuració, en el 
-cual s'indiquen dos parts obligatories "Input" i "Output" i una opcional
+El funcionament de logstash es basa en un fitxer de configuració, en el 
+cual s'indiquen dos parts obligatòries "Input" i "Output" i una opcional
 "Filter".
 A partir de la versió 2.3 el proces de filtratge i el de sortida es 
 realitzen en la mateixa etapa, cosa que millora el rendiment.
@@ -53,8 +53,8 @@ cas un fitxer local.
 > - Filter: Defineix els filtres que s'aplicaràn als logs d'entrada.
 >> - grok: Analitza I estructura el text, Es la millor eina de logstash 
 per convertir els logs no estructurats en algo estructurat I consultable.
->> - geoip: Afegeix informacio de la localització de la IP. (A mes 
-mostra grafiques en Kibana). 
+>> - geoip: Afegeix informació de la localització de la IP. (A mes 
+mostra gràfiques en Kibana). 
 > - Output: Serà la sortida d'aquets logs, en el nostre cas, l'output serà
 el servidor elasticsearch, on es guardaran en format JSON.
 

@@ -3,15 +3,15 @@
 
 ## Definició
 Es una plataforma d'ànalisis i visualització de dades. S'utilitza per interactuar amb les dades 
-enmagatzemades d'elasticsearch. 
+emmagatzemades d'elasticsearch. 
 
-Pot realizar facilment analisis avançats de dades i visualitzar aquestes
+Pot realitzar fàcilment anàlisis avançats de dades i visualitzar aquestes
 a traves de gràfics i mapes. 
 
 D'aquesta manera utilitzant kibana es pot treballar amb grans volums de
-dades de manera fàcil i ràpida. I al estar disenyat per treballar amb 
-elasticsearch, no presenta ningun tipus de dificultat ni requereix ningún
-tipus de configuració extra. Es tant facil com instalar-ho i ja es podràn 
+dades de manera fàcil i ràpida. I al estar dissenyat per treballar amb 
+elasticsearch, no presenta ningun tipus de dificultat ni requereix ningun
+tipus de configuració extra. Es tant fàcil com instal·lar-ho i ja es podran 
 visualitzar les dades del servidor elasticsearch indicat.
 
 S'accedeix a kibana a traves del port 5601.
@@ -25,7 +25,7 @@ es pot configurar:
 
 > - El servidor elasticsearch que conté les dades que ha de postprocesar.
 
-> - Mecanismes de seguretat per comunicarse amb el server d'elastic.
+> - Mecanismes de seguretat per comunicar-se amb el server d'elastic.
 Poden ser passwords i usuaris, o certificats i claus ssl.
 
 > - Configuracions de timeout.
@@ -36,7 +36,7 @@ Exemple de fitxer de configuració:
 
 [kibana.yml](/kibana/image/kibana.yml)
 
-Accedirem a la interficie de kibana a través de la url:
+Accedirem a la interfície de kibana a través de la url:
 
 `http://localhost:5601`
 
@@ -47,12 +47,12 @@ es a través d'aquets video-turorials oficials:
 
 ## Exemples de visualitzacions
 
-Kibana ofereix un metode de lo mes sencill pero poder exportar les nostres 
-visualitzacions, i implementarles en una pàgina web per exemple.
+Kibana ofereix un mètode de lo mes senzill però poder exportar les nostres 
+visualitzacions, i implementar-les en una pàgina web per exemple.
 
-Es tan sencill com crear un dashboard, a la toolbar veurem una icona 
-on posa "shared", i d'allà podrem treure un sencill link, el cual al 
-introduirlo en un fitxer html o markdown, s'estarà visualitzant el nostre 
+Es tan senzill com crear un dashboard, a la toolbar veurem una icona 
+on posa "shared", i d'allà podrem treure un senzill link, el cual al 
+introduir-lo en un fitxer html o markdown, s'estarà visualitzant el nostre 
 dashboard.
 
 <iframe src="http://localhost:5601/app/kibana#/dashboard/Complet-dashboard?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now%2Fw,mode:quick,to:now%2Fw))&_a=(filters:!(),options:(darkTheme:!t),panels:!((col:1,id:geoip-maps-location-apache,panelIndex:1,row:1,size_x:6,size_y:4,type:visualization),(col:7,id:where-from-logs-apache,panelIndex:4,row:1,size_x:6,size_y:4,type:visualization),(col:1,columns:!(_id,_index,bytes,clientip,geoip.city_name),id:'London-GET!'s-apache',panelIndex:5,row:5,size_x:9,size_y:3,sort:!('@timestamp',desc),type:search)),query:(query_string:(analyze_wildcard:!t,query:'*')),title:Complet-dashboard,uiState:(P-4:(spy:(mode:(fill:!f,name:!n)))))" height="600" width="800"></iframe>

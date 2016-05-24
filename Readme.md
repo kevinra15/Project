@@ -1,7 +1,7 @@
 # Projecte final de curs
 
 ## Autor
-> - Kevin Ramos Lopez
+> - Kevin Ramos López
 > - isx47752902
 > - ASX-2
 > - Curs 2015/2016
@@ -15,7 +15,7 @@ Aquest es el treball elaborat com a projecte de final de curs de ASIX.
 El tema general d'aquest any es __tecnologies actuals per la gestió de logs__.
 I el tema concret escollit per aquest projecte es __Centralització de logs JSON en BBDD i post-processat__.
 
-__Breu d'escripció del projecte:__
+__Breu descripció del projecte:__
 
 Actualment existeixen BBDD pensades per a emmagatzemar documents en format JSON. 
 Això permet que la sortida en format JSON del journal de diverses màquines 
@@ -36,7 +36,7 @@ __Serveis utilitzats:__
 
 La utilització d'aquets serveis per processar les dades s'està fent cada cop més popular, 
 la combinació dels tres serveis mencionats anteriorment s'anomena (ELK).
-Proporcionen informació processable a temps real de casi cualsevol tipus 
+Proporcionen informació processable a temps real de casi qualsevol tipus 
 de font de dades estructurades o no estructurades. Milers de organitzacions
 s'han sumat la utilització d'aquest servei:
 

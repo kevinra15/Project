@@ -1,5 +1,5 @@
 %Projecte final de grau
-%Kevin Ramos Lopez
+%Kevin Ramos López
 %ASX-Curs2 2015/2016
 
 # Introducció
@@ -19,8 +19,8 @@ Serveis utilitzats:
 ## Descripció
 
 La gestió de dades a mesura que creixen es fa mes dura i pesada, es per
-aixo que l'entorn ELK s'ha fet tant popular, ja que proporciona
-un metode comode i ràpid per procesar grans cantitats d'informació.
+això que l'entorn ELK s'ha fet tant popular, ja que proporciona
+un mètode còmode i ràpid per processar grans cantitats d'informació.
 
 ## Open Source
 ![](images/opensource.png)
@@ -55,11 +55,11 @@ El funcionament de logstash es basa en un fitxer de configuració.
 
 ## Estructura fitxer de configuració
 
-> - Input: S'indica quina serà l'entrada de dades a procesar.
+> - Input: S'indica quina serà l'entrada de dades a processar
 
 > - Filter: Defineix els filtres que s'aplicaràn a les dades d'entrada.
 
-> - Output: Indicarà la sortida d'aquetes dades, podrà ser des d'un 
+> - Output: Indicarà la sortida d'aquestes dades, podrà ser des d'un 
 servidor elasticsearch fins a un simple fitxer local.
 
 ## Exemple
@@ -125,7 +125,7 @@ output {
 
 ## Descripció
 
-Es un motor de busqueda basat en apache. Ens permet enmagatzemar,
+Es un motor de busqueda basat en apache. Ens permet emmagatzemar,
 i analitzar grans cantitats de dades a temps casi real.
 Elasticsearch funciona en un clúster, en el cual es repliquen les dades
 entre els diferents nodes.
@@ -144,19 +144,19 @@ Document
 
 Shards i repliques
 
-## Posibles estats del clúster
+## Possibles estats del clúster
 
 > - Red: Existeixen shards no assignats en el clúster. 
 
-> - Yellow: Tots els shards estàn assignats, pero no hi han replicas 
+> - Yellow: Tots els shards estàn assignats, però no hi han replicas 
 d'alguns d'aquets.
 
-> - Green: Tots els shards estàn assignats i amb les seves respectives 
+> - Green: Tots els shards estan assignats i amb les seves respectives 
 repliques.
 
 ## Interacció amb elastic
 
-Per interactuar amb elasticsearch es pot utilitzar cualsevol eina que 
+Per interactuar amb elasticsearch es pot utilitzar qualsevol eina que 
 ens permeti fer crides HTTP/REST. Com per exemple curl:
 
 `curl 'localhost:9200/_cat/health?v'`
@@ -165,9 +165,9 @@ ens permeti fer crides HTTP/REST. Com per exemple curl:
 
 `curl 'localhost:9200/_cat/indices?v`
 
-## Interficie gràfica
+## Interfície gràfica
 
-Una manera mes comode de treballar amb elasticsearch es instalant algún
+Una manera mes còmode de treballar amb elasticsearch es instal·lant algun
 plugin que proporcioni una interficie gràfica, com per exemple el "head":
 
 `elasticsearch/bin/plugin install mobz/elasticsearch-head`
@@ -280,14 +280,14 @@ elasticsearch.url: "http://hostElast:9200"
 
 - Permet administrar grans volums de dades de manera fàcil i ràpida. 
 
-- Està disenyat per treballar amb elasticsearch
+- Està dissenyat per treballar amb elasticsearch
 
-Es tant facil com instalar-ho i ja es podràn visualitzar les dades 
+Es tant fàcil com instal·lar-ho i ja es podran visualitzar les dades 
 del servidor elasticsearch indicat.
 
 #
 
-<iframe src="http://192.168.2.43:5601/app/kibana#/dashboard/Logs-apache,-London-San-Francisco?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-15m,mode:quick,to:now))&_a=(filters:!(),options:(darkTheme:!t),panels:!((col:7,id:city-name-logs-location-graffic,panelIndex:1,row:1,size_x:6,size_y:4,type:visualization),(col:1,id:geo-map-apache-logs,panelIndex:2,row:1,size_x:6,size_y:4,type:visualization),(col:1,columns:!(_index,agent,bytes,clientip,geoip.area_code,geoip.city_name,geoip.country_name,httpversion,message),id:'London-SanFrancisco-Gets-apache(9:48)',panelIndex:3,row:5,size_x:8,size_y:4,sort:!(_score,desc),type:search),(col:9,id:table-logs-city-count,panelIndex:4,row:5,size_x:4,size_y:4,type:visualization)),query:(query_string:(analyze_wildcard:!t,query:'*')),title:'Logs%20apache,%20London%20San%20Francisco',uiState:())" height="600" width="800"></iframe>
+<iframe src="http://localhost:5601/app/kibana#/dashboard/Complet-dashboard?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now%2Fw,mode:quick,to:now%2Fw))&_a=(filters:!(),options:(darkTheme:!t),panels:!((col:1,id:geoip-maps-location-apache,panelIndex:1,row:1,size_x:6,size_y:4,type:visualization),(col:7,id:where-from-logs-apache,panelIndex:4,row:1,size_x:6,size_y:4,type:visualization),(col:1,columns:!(_id,_index,bytes,clientip,geoip.city_name),id:'London-GET!'s-apache',panelIndex:5,row:5,size_x:8,size_y:3,sort:!('@timestamp',desc),type:search),(col:9,id:table-city-count-logs,panelIndex:6,row:5,size_x:4,size_y:3,type:visualization)),query:(query_string:(analyze_wildcard:!t,query:'*')),title:Complet-dashboard,uiState:(P-4:(spy:(mode:(fill:!f,name:!n)))))" height="600" width="800"></iframe>
 
 # FIN
 
